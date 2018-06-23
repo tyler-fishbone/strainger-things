@@ -1,6 +1,9 @@
 var express = require('express');
 var router = express.Router();
 var pg = require('pg');
+var cors = require('cors');
+
+router.use(cors());
 
 const client = new pg.Client('postgresql://localhost:5432/strainger_things');
 client.connect();
@@ -19,7 +22,10 @@ router.post('/add', function(req, res){
 router.get('/', function(req, res, next) {
   // res.render('index', { title: 'Express' });
   client.query('SELECT * FROM strain;')
-    .then(results => res.send(results.rows))
+    // .then(console.log)
+    .then(results => res.json({
+      data: results.rows
+    }))
     .catch(console.error);
 });
 
