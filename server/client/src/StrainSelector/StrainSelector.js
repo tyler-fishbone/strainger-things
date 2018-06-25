@@ -7,13 +7,17 @@ class StrainSelector extends Component {
       strains: [],
     }
 
-    // this.handleChange = this.handleChange.bind(this)
+    this.handleClick = this.handleClick.bind(this)
   }
 
-  // handleChange(e) {
-  //   this.setState({[e.target.name]: e.target.value})
-  //   this.props.setAppState({[e.target.name]: e.target.value})
+  // handleClick(e) {
+  //   // this.setState({[e.target.name]: e.target.value})
+  //   this.props.setAppState({['selectedStrain']: e.target.name})
   // }
+
+  handleClick(id) {
+    this.props.onStrainSelect(id);
+  }
 
   componentDidMount() {
     fetch('http://localhost:3001/')  
@@ -29,13 +33,12 @@ class StrainSelector extends Component {
       <div className="strain-selector">
         <h2>Choose a Strain</h2>
         {this.state.strains.map(strain =>
-        <a href="">
-          <div key={strain.strain_id}className='strain-selector-tile'>
+          <div className='strain-selector-tile'>
             <p className='tile-strain-type'>{strain.type}</p>
             <p className='tile-strain-abbreviation'>{strain.abbreviation}</p>
             <p className='tile-strain-name'>{strain.name}</p>
+            <a className="tile-strain-button" name={strain.strain_id} onClick={event => this.handleClick(event.target.name)}>Click This</a>
           </div>
-        </a>
         )}
       </div>
     )

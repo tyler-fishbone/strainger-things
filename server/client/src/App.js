@@ -5,7 +5,12 @@ import StrainSelector from './StrainSelector/StrainSelector'
 import './App.css'
 
 class App extends Component {
-  // state = {strains: []}
+  constructor(props) {
+    super(props)
+    this.state = {
+      selectedStrain: undefined
+    }
+  }
 
   // componentDidMount() {
   //   fetch('http://localhost:3001/')  
@@ -16,13 +21,21 @@ class App extends Component {
   //   // })
   // }
 
+  
+
   render() {
     return (
       <div className="App">
         <MainHeader />
-        <AppIntro />
-        
-        <StrainSelector />
+        {
+          !this.state.selectedStrain ?
+          <div className="home-view">
+            <AppIntro />
+            <StrainSelector onStrainSelect={selectedStrain => this.setState({selectedStrain})}/>
+          </div>
+          :
+          <p>Strain Selected</p>
+        }
       </div>
     );
   }
