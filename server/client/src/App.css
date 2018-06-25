@@ -36,8 +36,34 @@
   border: 1px solid black;
   border-radius: 25px;
   margin: 50px;
-  
+  position: relative;
 }
+
+.tile-strain-type {
+  position: absolute;
+  top: 5px;
+  left: 15px;
+  text-align: left;
+}
+
+.tile-strain-abbreviation {
+  position: absolute;
+  font-size: 4em;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.tile-strain-name {
+  position: absolute;
+  bottom: 5px;
+  right: 15px;
+  text-align: right;
+}
+
+
 
 
 

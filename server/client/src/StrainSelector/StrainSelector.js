@@ -30,9 +30,9 @@ class StrainSelector extends Component {
         <h2>Choose a Strain</h2>
         {this.state.strains.map(strain =>
           <div key={strain.strain_id}className='strain-selector-tile'>
-            <p className='top-left'>{strain.type}</p>
-            <p className='strain-abbrevtion'>{strain.name}</p>
-            <p className='bottom-right'>{strain.abbreviation}</p>
+            <p className='tile-strain-type'>{strain.type}</p>
+            <p className='tile-strain-abbreviation'>{strain.abbreviation}</p>
+            <p className='tile-strain-name'>{strain.name}</p>
             
           </div>
         )}
