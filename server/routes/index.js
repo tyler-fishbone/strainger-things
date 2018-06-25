@@ -5,7 +5,7 @@ var cors = require('cors');
 
 router.use(cors());
 
-const client = new pg.Client('postgresql://localhost:5432/strainger_things');
+const client = new pg.Client('postgresql://localhost:5432/giffy_jane');
 client.connect();
 client.on('error', err => console.error(err));
 

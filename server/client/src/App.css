@@ -27,6 +27,20 @@
   to { transform: rotate(360deg); }
 }
 
+/* Strain Selector */
+
+.strain-selector-tile {
+  display:inline-block;
+  width: 200px;
+  height: 254px;
+  border: 1px solid black;
+  border-radius: 25px;
+  margin: 50px;
+  
+}
+
+
+
 .gif-tile-result {
   display:inline-block;
   width: 250px;
