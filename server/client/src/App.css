@@ -1,33 +1,105 @@
-.App {
-  text-align: center;
+h1, h2, h3, h4, h5, h6, p, a {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin: 0px;
+
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+
+.App {
+  text-align: center;
+  background-color: #3E3E58;
+}
+
+
+.App-header-container {
+
+  width: 1064px;
+  margin: auto;
+  text-align: left;
 }
 
 .App-header {
-  background-color: #222;
-  /* height: 50px; */
-  padding: 10px;
+  height: 72px;
   color: white;
 }
 
 .App-title {
-  font-size: 1.5em;
+  float: left;
+  width: 425px;
+  height: 72px;
+  width: 50%;
 }
 
-.App-intro {
-  font-size: large;
+.App-title h1 {
+  margin: 0px;
+  font-size: 25px;
+  padding: 8px;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.header-nav {
+  float: right;
+  width: 250px;
+  /* display: inline-block; */
 }
+
+.header-nav ul {
+  margin: 0px;
+}
+
+.header-nav li {
+  display: inline-block;
+  padding: 15px;
+}
+
+.header-nav li a {
+  color: white;
+  text-decoration: none;
+}
+
+
+
+
+
+/* App Intro */
+.app-intro {
+  height: 500px;
+  background: #3E3E58;
+  position: relative;
+}
+
+.app-intro-text-container {
+  width: 1064px;
+  margin: auto;
+  text-align: left;
+}
+
+.app-intro-text {
+  /* margin-top: 67px; */
+  width: 587px;
+  padding-top: 67px;
+}
+
+.app-intro-text h2 {
+  color: white;
+  font-size: 48px;
+  margin: 0px;
+  margin-bottom: 20px;
+}
+
+.mountain-scene {
+  position: absolute;
+  right: 20px;
+  bottom: 0px;
+}
+
+
+
 
 /* Strain Selector */
+
+.strain-selector {
+  background-color: white;
+}
 
 .strain-selector-tile {
   display:inline-block;
@@ -36,10 +108,49 @@
   border: 1px solid black;
   border-radius: 25px;
   margin: 50px;
-  
+  position: relative;
 }
 
+.strain-selector-tile:hover {
+  background-color: rgba(0, 0, 255, 0.267);
+}
 
+.tile-strain-type {
+  position: absolute;
+  top: 5px;
+  left: 15px;
+  text-align: left;
+}
+
+.tile-strain-abbreviation {
+  position: absolute;
+  font-size: 4em;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.tile-strain-name {
+  position: absolute;
+  bottom: 5px;
+  right: 15px;
+  text-align: right;
+}
+
+.tile-strain-button {
+  display: block;
+  position: absolute;
+  bottom: -35px;
+  left: 50%;
+  text-align: right;
+  transform: translate(-50%, -50%);
+}
+
+.strain-selector-tile:hover {
+  cursor: pointer;
+}
 
 .gif-tile-result {
   display:inline-block;
@@ -50,3 +161,4 @@
 .gif-tile-result img {
   max-width: 250px;
 }
+

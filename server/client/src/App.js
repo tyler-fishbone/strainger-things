@@ -1,10 +1,16 @@
 import React, { Component } from 'react'
 import MainHeader from './MainHeader/MainHeader'
+import AppIntro from './AppIntro/AppIntro'
 import StrainSelector from './StrainSelector/StrainSelector'
 import './App.css'
 
 class App extends Component {
-  // state = {strains: []}
+  constructor(props) {
+    super(props)
+    this.state = {
+      selectedStrain: undefined
+    }
+  }
 
   // componentDidMount() {
   //   fetch('http://localhost:3001/')  
@@ -15,15 +21,21 @@ class App extends Component {
   //   // })
   // }
 
+  
+
   render() {
     return (
       <div className="App">
         <MainHeader />
-        <StrainSelector />
-        {/* <h1>strains</h1>
-        {this.state.strains.map(strain =>
-          <div key={strain.strain_id}>{strain.name}</div>
-        )} */}
+        {
+          !this.state.selectedStrain ?
+          <div className="home-view">
+            <AppIntro />
+            <StrainSelector onStrainSelect={selectedStrain => this.setState({selectedStrain})}/>
+          </div>
+          :
+          <p>Strain Selected</p>
+        }
       </div>
     );
   }
