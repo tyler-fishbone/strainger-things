@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import MainHeader from './MainHeader/MainHeader'
+import AppIntro from './AppIntro/AppIntro'
 import StrainSelector from './StrainSelector/StrainSelector'
 import './App.css'
 
@@ -19,11 +20,9 @@ class App extends Component {
     return (
       <div className="App">
         <MainHeader />
+        <AppIntro />
+        
         <StrainSelector />
-        {/* <h1>strains</h1>
-        {this.state.strains.map(strain =>
-          <div key={strain.strain_id}>{strain.name}</div>
-        )} */}
       </div>
     );
   }

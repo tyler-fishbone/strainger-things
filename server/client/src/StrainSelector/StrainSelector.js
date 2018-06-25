@@ -29,12 +29,13 @@ class StrainSelector extends Component {
       <div className="strain-selector">
         <h2>Choose a Strain</h2>
         {this.state.strains.map(strain =>
+        <a href="">
           <div key={strain.strain_id}className='strain-selector-tile'>
             <p className='tile-strain-type'>{strain.type}</p>
             <p className='tile-strain-abbreviation'>{strain.abbreviation}</p>
             <p className='tile-strain-name'>{strain.name}</p>
-            
           </div>
+        </a>
         )}
       </div>
     )
