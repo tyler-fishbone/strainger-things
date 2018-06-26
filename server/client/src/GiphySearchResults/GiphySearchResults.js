@@ -6,16 +6,13 @@ class GiphySearchResults extends Component {
     
     this.ResultsList = this.ResultsList.bind(this)
   }
+
   
   ResultsList(props) {
-    // console.log('props', props)
     const children = props.gifSearchResults.data;
     const listItems = children.map((child) =>
-      <ul className="gif-tile-result">
-        {/* <li><h2>{child.title}</h2></li> */}
-        {/* <li><p>Posted by:{child.data.author}</p></li> */}
+      <ul key={child.id} className="gif-tile-result">
         <li><img src={child.images.downsized_large.url} /></li>
-        {/* <li><a href={`http://reddit.com${child.data.permalink}`}>Link to post</a></li> */}
       </ul>
     )
     return (
@@ -34,19 +31,3 @@ class GiphySearchResults extends Component {
 }
 
 export default GiphySearchResults
-
-// createResultsList = () => {
-//   let resultsList = []
-
-//   console.log(this.state)
-//   // Outer loop to create parent
-//   for (let i = 0; i < 5; i++) {
-//     let children = []
-//     children.push(<li><h2>{this.props.results.data.children[i].data.title}</h2></li>)
-//     children.push(<li><p>Posted by:{this.props.results.data.children[i].data.author}</p></li>)
-//     children.push(<li><img src={this.props.results.data.children[i].data.url} /></li>)
-//     //Create the parent and add the children
-//     resultsList.push(<ul>{children}</ul>)
-//   }
-//   return resultsList
-// }

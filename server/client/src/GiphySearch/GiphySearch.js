@@ -6,7 +6,8 @@ class GiphySearch extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      gifSearchResults: undefined
+      gifSearchResults: undefined,
+      currentSearchTerm: undefined
     }
 
   }

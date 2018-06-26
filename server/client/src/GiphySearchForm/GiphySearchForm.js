@@ -21,6 +21,7 @@ class GiphySearchForm extends Component {
 
   handleChange(e) {
     this.setState({[e.target.name]: e.target.value})
+    this.props.setAppState({currentSearchTerm: e.target.value})
   }
 
   render() {

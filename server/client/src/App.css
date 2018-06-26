@@ -215,7 +215,7 @@ h1, h2, h3, h4, h5, h6, p, a {
 
 
 .giphy-search {
-  height: 725px;
+  min-height: 725px;
   background-image: linear-gradient(-131deg, #3DBDB6 0%, #0089CE 100%);
 }
 
@@ -257,4 +257,15 @@ h1, h2, h3, h4, h5, h6, p, a {
   text-align: center;
 }
 
-/* Rectangle 2: */
+/* GiphySearchResults */
+
+.gif-tile-result {
+  list-style-type: none;
+  display: inline-block;
+  width: 250px;
+  height: 250px;
+}
+
+.gif-tile-result img {
+  max-width: 250px;
+}
