@@ -162,3 +162,50 @@ h1, h2, h3, h4, h5, h6, p, a {
   max-width: 250px;
 }
 
+
+/* Strain Detail */
+
+.strain-detail-container {
+  width: 100%;
+  background-color: white;
+}
+
+.strain-detail {
+  padding: 100px 0px;
+  /* height: 400px; */
+  width: 1064px;
+  margin: auto;
+}
+
+.strain-image {
+  width: 50%;
+  display: inline;
+}
+
+.strain-image img {
+  max-height: 379px;
+  max-width: 100%;
+  float: left;
+}
+
+.strain-detail-textual {
+  float: right;
+  width: 50%;
+  height: 379px;
+  /* border: 1px solid black; */
+  overflow: scroll;
+}
+
+.strain-detail-textual * {
+  text-align: left;
+  text-transform: capitalize;
+  padding: 10px 0px;;
+}
+
+.strain-detail-description {
+  text-transform: unset;
+}
+
+.strain-detail-description, .strain-detail-type {
+  color: #72808E;
+}
