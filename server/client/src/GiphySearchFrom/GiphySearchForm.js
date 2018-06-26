@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import superagent from 'superagent'
 
-class SearchForm extends Component {
+class GiphySearchForm extends Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -48,4 +48,4 @@ class SearchForm extends Component {
   }
 }
 
-export default SearchForm
+export default GiphySearchForm

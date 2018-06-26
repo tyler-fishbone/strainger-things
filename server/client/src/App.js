@@ -3,6 +3,7 @@ import MainHeader from './MainHeader/MainHeader'
 import AppIntro from './AppIntro/AppIntro'
 import StrainSelector from './StrainSelector/StrainSelector'
 import StrainDetail from './StrainDetail/StrainDetail'
+import GiphySearchForm from './GiphySearchFrom/GiphySearchForm'
 import './App.css'
 
 class App extends Component {
@@ -24,7 +25,11 @@ class App extends Component {
             <StrainSelector onStrainSelect={selectedStrainId => this.setState({selectedStrainId})}/>
           </div>
           :
-          <StrainDetail selectedStrainId={this.state.selectedStrainId}/>
+          <div className="detail-view">
+            <StrainDetail selectedStrainId={this.state.selectedStrainId}/>
+            <GiphySearchForm />
+          </div>
+
         }
       </div>
     );
