@@ -15,7 +15,7 @@ router.get('/strainDetail/:id', function(req, res, next) {
   client.query('SELECT * FROM strain WHERE strain_id=$1', [req.params.id])
     // .then(console.log)
     .then(results => res.json({
-      data: results.rows
+      data: results.rows[0]
     }))
     .catch(console.error);
 });
