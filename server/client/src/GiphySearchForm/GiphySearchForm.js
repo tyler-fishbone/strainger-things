@@ -15,7 +15,7 @@ class GiphySearchForm extends Component {
   handleSubmit(e) {
     e.preventDefault()
     superagent.get(`http://api.giphy.com/v1/gifs/search?api_key=QS60zQhegjVYItnkZH9TNeR131o1rj9m&q=${this.state.searchFormGif}`)
-    .then(res => this.props.setAppState({results: res.body}))
+    .then(res => this.props.setAppState({gifSearchResults: res.body}))
     .catch(console.error)
   }
 
@@ -34,13 +34,6 @@ class GiphySearchForm extends Component {
             value={this.state.searchFormGif}
             onChange={this.handleChange}
             />
-          {/* <input
-            type="number"
-            placeholder="Number of listings"
-            name="searchFormLimit"
-            value={this.state.searchFormLimit}
-            onChange={this.handleChange}
-            /> */}
           <button type="submit">Search</button>
         </form>
       </div>

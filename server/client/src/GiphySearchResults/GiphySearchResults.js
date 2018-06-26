@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-class SearchResultList extends Component {
+class GiphySearchResults extends Component {
   constructor(props) {
     super(props)
     
@@ -9,7 +9,7 @@ class SearchResultList extends Component {
   
   ResultsList(props) {
     // console.log('props', props)
-    const children = props.results.data;
+    const children = props.gifSearchResults.data;
     const listItems = children.map((child) =>
       <ul className="gif-tile-result">
         {/* <li><h2>{child.title}</h2></li> */}
@@ -33,7 +33,7 @@ class SearchResultList extends Component {
   }
 }
 
-export default SearchResultList
+export default GiphySearchResults
 
 // createResultsList = () => {
 //   let resultsList = []
