@@ -16,7 +16,7 @@ class GiphySearchResults extends Component {
 
   returnGifObject(iter, target_id) {
     for (let i = 0; i < iter.length; i++) {
-      if (iter[i].id == target_id) {
+      if (iter[i].id === target_id) {
         return iter[i]
       }
     }
@@ -28,9 +28,10 @@ class GiphySearchResults extends Component {
     Promise.resolve(this.setState({
       selectedGif: this.returnGifObject(this.props.gifSearchResults.data, gif_id)
     }))
-    .then(this.postGifToStrain)
     .then(() => console.log(this.state.selectedGifId))
     .then(() => console.log(this.state.selectedGif))
+    .then(() => console.log(this.props.searchTag))
+    .then(this.postGifToStrain)
     
     // this.postGifToStrain()
   }
@@ -45,9 +46,9 @@ class GiphySearchResults extends Component {
       },
       body: JSON.stringify({
         strain_id: this.props.selectedStrainId,
-        // giphy_id: this.state.selectedGif.id,
+        giphy_id: this.state.selectedGif.id,
         downsized_large_url: this.state.selectedGif.images.downsized_large.url,
-        search_tag: ''
+        search_tag: this.props.searchTag,
       })
     })
     // .then(res => res.json())
@@ -61,7 +62,7 @@ class GiphySearchResults extends Component {
     const children = props.gifSearchResults.data;
     const listItems = children.map((child) =>
       <ul className="gif-tile-result" key={child.id}>
-        <li><img src={child.images.downsized_large.url} /></li>
+        <li><img src={child.images.downsized_large.url} alt={child.title} /></li>
         <li><div id={child.id} onClick={this.handleClick} >Click to Select Gif</div></li>
         {/* <li><a key={child.id} onClick={event => this.setState({selectedGifId: event.target.key})}>Click to Select Gif</a></li> */}
       </ul>

@@ -59,7 +59,7 @@ export default StrainSelector
 // GG4 - Hyrbid
 // Bubba Kush - indica
 
-{/* <form>
+/* <form>
 <select name="selectedStrain" onChange={this.handleChange} id="">
   <option>Select Your Strain</option>
   <option value="blue-dream">Blue Dream - Hybrid</option>
@@ -73,4 +73,4 @@ export default StrainSelector
   <option value="gg-4">GG4 - Hyrbid</option>
   <option value="bubba-kush">Bubba Kush - indica</option>
 </select>
-</form> */}
+</form> */

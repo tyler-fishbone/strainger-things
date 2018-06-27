@@ -5,7 +5,7 @@ class GiphySearchForm extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      searchFormGif: '',
+      searchTag: '',
     }
 
     this.handleSubmit = this.handleSubmit.bind(this)
@@ -14,8 +14,10 @@ class GiphySearchForm extends Component {
 
   handleSubmit(e) {
     e.preventDefault()
-    superagent.get(`http://api.giphy.com/v1/gifs/search?api_key=QS60zQhegjVYItnkZH9TNeR131o1rj9m&q=${this.state.searchFormGif}`)
+    superagent.get(`http://api.giphy.com/v1/gifs/search?api_key=QS60zQhegjVYItnkZH9TNeR131o1rj9m&q=${this.state.searchTag}`)
     .then(res => this.props.setAppState({gifSearchResults: res.body}))
+    .then(console.log('GiphySearchForm -> searchTag: ', this.state.searchTag))
+    .then(() => this.props.setAppState({searchTag: this.state.searchTag}))
     .catch(console.error)
   }
 
@@ -31,8 +33,8 @@ class GiphySearchForm extends Component {
           <input 
             type="text"
             placeholder="Search for Gifs by keyword or phrase"
-            name="searchFormGif"
-            value={this.state.searchFormGif}
+            name="searchTag"
+            value={this.state.searchTag}
             onChange={this.handleChange}
             />
           <button type="submit">Search</button>

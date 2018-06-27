@@ -22,7 +22,7 @@ router.get('/strainDetail/:id', function(req, res, next) {
 
 router.post('/add', function(req, res){
   client.query(`
-    INSERT INTO gif (strain_id, giphy_id, downsized_large_url) VALUES($1, $2, $3)`, [req.body.strain_id, req.body.giphy_id, req.body.downsized_large_url]
+    INSERT INTO gif (strain_id, giphy_id, downsized_large_url, search_tag) VALUES($1, $2, $3, $4)`, [req.body.strain_id, req.body.giphy_id, req.body.downsized_large_url, req.body.search_tag]
   )
     .then(() => res.sendStatus(200))
     .catch(console.error);

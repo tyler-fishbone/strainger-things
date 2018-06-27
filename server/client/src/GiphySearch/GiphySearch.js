@@ -8,6 +8,7 @@ class GiphySearch extends Component {
     this.state = {
       gifSearchResults: undefined,
       currentSearchTerm: undefined,
+      searchTag: undefined,
     }
   }
 
@@ -18,7 +19,10 @@ class GiphySearch extends Component {
         <GiphySearchForm setAppState={this.setState.bind(this)}/>
         {
           this.state.gifSearchResults ?
-          <GiphySearchResults gifSearchResults={this.state.gifSearchResults} selectedStrainId={this.props.selectedStrainId}/>
+          <GiphySearchResults 
+            gifSearchResults={this.state.gifSearchResults} 
+            selectedStrainId={this.props.selectedStrainId}
+            searchTag={this.state.searchTag} />
           : undefined
         }
       </div>
