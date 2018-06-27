@@ -27,7 +27,7 @@ class App extends Component {
           :
           <div className="detail-view">
             <StrainDetail selectedStrainId={this.state.selectedStrainId}/>
-            <GiphySearch />
+            <GiphySearch selectedStrainId={this.state.selectedStrainId}/>
           </div>
 
         }
