@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
 import superagent from 'superagent'
 
-class SearchForm extends Component {
+class GiphySearchForm extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      searchFormGif: '',
+      searchTag: '',
     }
 
     this.handleSubmit = this.handleSubmit.bind(this)
@@ -14,13 +14,16 @@ class SearchForm extends Component {
 
   handleSubmit(e) {
     e.preventDefault()
-    superagent.get(`http://api.giphy.com/v1/gifs/search?api_key=QS60zQhegjVYItnkZH9TNeR131o1rj9m&q=${this.state.searchFormGif}`)
-    .then(res => this.props.setAppState({results: res.body}))
+    superagent.get(`http://api.giphy.com/v1/gifs/search?api_key=QS60zQhegjVYItnkZH9TNeR131o1rj9m&q=${this.state.searchTag}`)
+    .then(res => this.props.setAppState({gifSearchResults: res.body}))
+    .then(console.log('GiphySearchForm -> searchTag: ', this.state.searchTag))
+    .then(() => this.props.setAppState({searchTag: this.state.searchTag}))
     .catch(console.error)
   }
 
   handleChange(e) {
     this.setState({[e.target.name]: e.target.value})
+    this.props.setAppState({currentSearchTerm: e.target.value})
   }
 
   render() {
@@ -30,17 +33,10 @@ class SearchForm extends Component {
           <input 
             type="text"
             placeholder="Search for Gifs by keyword or phrase"
-            name="searchFormGif"
-            value={this.state.searchFormGif}
+            name="searchTag"
+            value={this.state.searchTag}
             onChange={this.handleChange}
             />
-          {/* <input
-            type="number"
-            placeholder="Number of listings"
-            name="searchFormLimit"
-            value={this.state.searchFormLimit}
-            onChange={this.handleChange}
-            /> */}
           <button type="submit">Search</button>
         </form>
       </div>
@@ -48,4 +44,4 @@ class SearchForm extends Component {
   }
 }
 
-export default SearchForm
+export default GiphySearchForm

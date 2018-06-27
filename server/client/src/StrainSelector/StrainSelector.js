@@ -4,7 +4,7 @@ class StrainSelector extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      strains: [],
+      strains: []
     }
 
     this.handleClick = this.handleClick.bind(this)
@@ -33,12 +33,12 @@ class StrainSelector extends Component {
       <div className="strain-selector">
         <h2>Choose a Strain</h2>
         {this.state.strains.map(strain =>
-          <div className='strain-selector-tile'>
+          <a className='strain-selector-tile' onClick={event => this.handleClick(event.target.name)} name={strain.strain_id} key={strain.strain_id}>
             <p className='tile-strain-type'>{strain.type}</p>
             <p className='tile-strain-abbreviation'>{strain.abbreviation}</p>
             <p className='tile-strain-name'>{strain.name}</p>
-            <a className="tile-strain-button" name={strain.strain_id} onClick={event => this.handleClick(event.target.name)}>Click This</a>
-          </div>
+            {/* <a className="tile-strain-button">Click This</a> */}
+          </a>
         )}
       </div>
     )
@@ -59,7 +59,7 @@ export default StrainSelector
 // GG4 - Hyrbid
 // Bubba Kush - indica
 
-{/* <form>
+/* <form>
 <select name="selectedStrain" onChange={this.handleChange} id="">
   <option>Select Your Strain</option>
   <option value="blue-dream">Blue Dream - Hybrid</option>
@@ -73,4 +73,4 @@ export default StrainSelector
   <option value="gg-4">GG4 - Hyrbid</option>
   <option value="bubba-kush">Bubba Kush - indica</option>
 </select>
-</form> */}
+</form> */
