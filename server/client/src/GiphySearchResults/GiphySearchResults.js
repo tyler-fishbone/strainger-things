@@ -25,12 +25,14 @@ class GiphySearchResults extends Component {
   handleClick(event) {
     let gif_id = event.target.getAttribute('id')
     this.setState({selectedGifId: gif_id})
-    this.setState({
+    Promise.resolve(this.setState({
       selectedGif: this.returnGifObject(this.props.gifSearchResults.data, gif_id)
-    })
-    console.log(this.state.selectedGifId)
-    console.log(this.state.selectedGif)
-    this.postGifToStrain()
+    }))
+    .then(this.postGifToStrain)
+    .then(() => console.log(this.state.selectedGifId))
+    .then(() => console.log(this.state.selectedGif))
+    
+    // this.postGifToStrain()
   }
 
   postGifToStrain(e) {
