@@ -10,11 +10,6 @@ class StrainSelector extends Component {
     this.handleClick = this.handleClick.bind(this)
   }
 
-  // handleClick(e) {
-  //   // this.setState({[e.target.name]: e.target.value})
-  //   this.props.setAppState({['selectedStrain']: e.target.name})
-  // }
-
   handleClick(id) {
     this.props.onStrainSelect(id);
   }
@@ -23,9 +18,6 @@ class StrainSelector extends Component {
     fetch('http://localhost:3001/')  
     .then(response => response.json())
     .then(response => this.setState({ strains: response.data }))
-    // .then(({ data }) => {
-    //   console.log(data)
-    // })
   }
 
   render() {

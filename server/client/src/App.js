@@ -3,6 +3,7 @@ import MainHeader from './MainHeader/MainHeader'
 import AppIntro from './AppIntro/AppIntro'
 import StrainSelector from './StrainSelector/StrainSelector'
 import StrainDetail from './StrainDetail/StrainDetail'
+import TaggedGifDisplay from './TaggedGifDisplay/TaggedGifDisplay'
 import GiphySearch from './GiphySearch/GiphySearch'
 import './App.css'
 
@@ -10,9 +11,18 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      selectedStrainId: undefined
+      selectedStrainId: undefined,
+      // gifToAdd: ''
     }
+
+    // this.setStateGifToAdd = this.setStateGifToAdd.bind(this)
   }
+
+  // setStateGifToAdd(newVal){
+  //   this.setState({gifToAdd: newVal});
+  // }
+
+
 
   render() {
     return (
@@ -27,7 +37,12 @@ class App extends Component {
           :
           <div className="detail-view">
             <StrainDetail selectedStrainId={this.state.selectedStrainId}/>
-            <GiphySearch selectedStrainId={this.state.selectedStrainId}/>
+            <TaggedGifDisplay selectedStrainId={this.state.selectedStrainId}
+            gifToAdd={this.state.gifToAdd}/>
+            <GiphySearch 
+            selectedStrainId={this.state.selectedStrainId}
+            setStateGifToAdd={this.setStateGifToAdd}
+            />
           </div>
 
         }

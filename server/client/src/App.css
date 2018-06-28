@@ -166,7 +166,7 @@ h1, h2, h3, h4, h5, h6, p, a {
 
 .strain-detail-container {
   width: 100%;
-  background-color: white;
+  background-color: #F2F2F2;
 }
 
 .strain-detail {
@@ -177,7 +177,6 @@ h1, h2, h3, h4, h5, h6, p, a {
 }
 
 .strain-image {
-  width: 50%;
   display: inline;
 }
 
@@ -191,7 +190,6 @@ h1, h2, h3, h4, h5, h6, p, a {
   float: right;
   width: 50%;
   height: 379px;
-  /* border: 1px solid black; */
   overflow: scroll;
 }
 
@@ -210,9 +208,32 @@ h1, h2, h3, h4, h5, h6, p, a {
 }
 
 
+/* TaggedGifDisplay */
+.tagged-gif-display-container {
+  background-color: white;
+  min-height: 725px;
+}
+
+.tagged-gif-display-heading {
+  font-size: 2em;
+  padding: 50px;
+  color: #4A4A4A;
+}
+
+.tagged-gif-tile-result {
+  list-style-type: none;
+  display: inline-block;
+  width: 250px;
+  height: 250px;
+}
+
+.tagged-gif-tile-result img {
+  max-width: 250px;
+}
+
+
+
 /* GiphySearch */
-
-
 .giphy-search {
   min-height: 725px;
   background-image: linear-gradient(-131deg, #3DBDB6 0%, #0089CE 100%);
@@ -224,8 +245,8 @@ h1, h2, h3, h4, h5, h6, p, a {
   color: white;
 }
 
-/* GiphySearchForm */
 
+/* GiphySearchForm */
 .giphy-search-form input {
   /* opacity: 0.2; */
   background: #FFFFFF;
