@@ -11,13 +11,8 @@ class StrainDetail extends Component {
   componentDidMount() {
     this.fetchSelectedStrain()
   }
-  
-  // componentDidUpdate() {
-  //   this.fetchSelectedStrain()
-  // }
 
   componentDidUpdate(prevProps) {
-    // Typical usage (don't forget to compare props):
     if (this.props.selectedStrainId !== prevProps.selectedStrainId) {
       this.fetchSelectedStrain();
     }

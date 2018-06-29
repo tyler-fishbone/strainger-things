@@ -9,11 +9,10 @@ class TaggedGifDisplay extends Component {
     }
   }
 
-  // componentDidMount() {
-
-  //   fetch(`http://localhost:3001/taggedGifs/${this.props.selectedStrainId}`)
-  //   .then(response => response.json())
-  //   .then(response => this.setState({ taggedGifs: response.data }))
+  // componentDidUpdate(prevProps) {
+  //   if (this.props.selectedStrainId !== prevProps.selectedStrainId) {
+  //     this.fetchSelectedStrain();
+  //   }
   // }
 
   componentDidMount() {

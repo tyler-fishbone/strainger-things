@@ -12,11 +12,11 @@ class App extends Component {
     super(props)
     this.state = {
       selectedStrainId: undefined,
-      taggedGifs: []
-      // gifToAdd: ''
+      taggedGifs: [],
+      gifToAdd: ''
     }
 
-    // this.setStateGifToAdd = this.setStateGifToAdd.bind(this)
+    this.setStateGifToAdd = this.setStateGifToAdd.bind(this)
     this.updateTaggedGifs = this.updateTaggedGifs.bind(this)
   }
 
@@ -28,6 +28,10 @@ class App extends Component {
     fetch(`http://localhost:3001/taggedGifs/${this.state.selectedStrainId}`)
     .then(response => response.json())
     .then(response => this.setState({ taggedGifs: response.data }))
+  }
+
+  setStateGifToAdd(gifId) {
+    this.setState({ gifToAdd: gifId })
   }
 
   render() {

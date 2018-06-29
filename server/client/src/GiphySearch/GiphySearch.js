@@ -24,6 +24,7 @@ class GiphySearch extends Component {
             selectedStrainId={this.props.selectedStrainId}
             searchTag={this.state.searchTag} 
             updateTaggedGifs={this.props.updateTaggedGifs}
+            setStateGifToAdd={this.props.setStateGifToAdd}
             />
           : undefined
         }
