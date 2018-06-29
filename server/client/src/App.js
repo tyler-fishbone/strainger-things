@@ -12,39 +12,48 @@ class App extends Component {
     super(props)
     this.state = {
       selectedStrainId: undefined,
+      taggedGifs: []
       // gifToAdd: ''
     }
 
     // this.setStateGifToAdd = this.setStateGifToAdd.bind(this)
+    this.updateTaggedGifs = this.updateTaggedGifs.bind(this)
   }
 
-  // setStateGifToAdd(newVal){
-  //   this.setState({gifToAdd: newVal});
-  // }
+  componentDidMount() {
+    this.updateTaggedGifs()
+  }
 
-
+  updateTaggedGifs() {
+    fetch(`http://localhost:3001/taggedGifs/${this.state.selectedStrainId}`)
+    .then(response => response.json())
+    .then(response => this.setState({ taggedGifs: response.data }))
+  }
 
   render() {
     return (
       <div className="App">
         <MainHeader />
+        <AppIntro />
+        <StrainSelector onStrainSelect={selectedStrainId => this.setState({selectedStrainId})}/>
         {
-          !this.state.selectedStrainId ?
-          <div className="home-view">
-            <AppIntro />
-            <StrainSelector onStrainSelect={selectedStrainId => this.setState({selectedStrainId})}/>
-          </div>
-          :
+          this.state.selectedStrainId ?
           <div className="detail-view">
             <StrainDetail selectedStrainId={this.state.selectedStrainId}/>
-            <TaggedGifDisplay selectedStrainId={this.state.selectedStrainId}
-            gifToAdd={this.state.gifToAdd}/>
+            <TaggedGifDisplay 
+            selectedStrainId={this.state.selectedStrainId}
+            gifToAdd={this.state.gifToAdd}
+            taggedGifs={this.state.taggedGifs}
+            updateTaggedGifs={this.updateTaggedGifs}
+            />
             <GiphySearch 
             selectedStrainId={this.state.selectedStrainId}
             setStateGifToAdd={this.setStateGifToAdd}
+            updateTaggedGifs={this.updateTaggedGifs}
             />
           </div>
-
+          :
+          undefined
         }
       </div>
     );

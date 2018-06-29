@@ -9,12 +9,26 @@ class StrainDetail extends Component {
   }
 
   componentDidMount() {
+    this.fetchSelectedStrain()
+  }
+  
+  // componentDidUpdate() {
+  //   this.fetchSelectedStrain()
+  // }
+
+  componentDidUpdate(prevProps) {
+    // Typical usage (don't forget to compare props):
+    if (this.props.selectedStrainId !== prevProps.selectedStrainId) {
+      this.fetchSelectedStrain();
+    }
+  }
+
+
+
+  fetchSelectedStrain() {
     fetch(`http://localhost:3001/strainDetail/${this.props.selectedStrainId}`)
     .then(response => response.json())
     .then(response => this.setState({ selectedStrain: response.data }))
-    // .then(({ data }) => {
-    //   console.log(data)
-    // })
   }
 
   render() {

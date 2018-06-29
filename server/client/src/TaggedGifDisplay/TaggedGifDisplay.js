@@ -5,18 +5,24 @@ class TaggedGifDisplay extends Component {
     super(props)
 
     this.state = {
-      taggedGifs: []
+      // taggedGifs: []
     }
   }
 
+  // componentDidMount() {
+
+  //   fetch(`http://localhost:3001/taggedGifs/${this.props.selectedStrainId}`)
+  //   .then(response => response.json())
+  //   .then(response => this.setState({ taggedGifs: response.data }))
+  // }
+
   componentDidMount() {
-    fetch(`http://localhost:3001/taggedGifs/${this.props.selectedStrainId}`)
-    .then(response => response.json())
-    .then(response => this.setState({ taggedGifs: response.data }))
+    this.props.updateTaggedGifs()
+    // this.setState(this.state)
   }
 
   TaggedGifResultsList(props) {
-    const listItemsSlice = this.state.taggedGifs.reverse().slice(0,4)
+    const listItemsSlice = this.props.taggedGifs.reverse().slice(0,4)
     const listItems = listItemsSlice.map(gif => 
       <ul className="tagged-gif-tile-result">
         <li>

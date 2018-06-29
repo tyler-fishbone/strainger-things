@@ -32,6 +32,8 @@ class GiphySearchResults extends Component {
     .then(() => console.log(this.state.selectedGif))
     .then(() => console.log(this.props.searchTag))
     .then(this.postGifToStrain)
+    .then(console.log('updateTaggedGifs running'))
+    .then(this.props.updateTaggedGifs)
     // .then(this.props.setStateGifToAdd(this.state.selectedGifId))
     
     // this.postGifToStrain()
@@ -53,7 +55,7 @@ class GiphySearchResults extends Component {
       })
     })
     // .then(res => res.json())
-    // .then(res => console.log(res))
+    .then(res => console.log(res))
   }
 
   
