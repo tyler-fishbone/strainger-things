@@ -15,7 +15,9 @@ class TaggedGifDisplay extends Component {
       for (let i = 0; i < 10; i++){
         this.fetchTaggedGifs();
       }
+      this.refs.taggedgifdisplay.scrollIntoView({behavior:"smooth", block:"start"})
     }
+
   }
 
   componentDidMount() {
@@ -48,7 +50,7 @@ class TaggedGifDisplay extends Component {
 
   render() {
     return (
-      <div className="tagged-gif-display-container">
+      <div ref="taggedgifdisplay" className="tagged-gif-display-container">
         <h2 className="tagged-gif-display-heading">This strain recently made Giffy Jane users feel...</h2>
         <div className="tagged-gif-results-container">
           {this.TaggedGifResultsList()}

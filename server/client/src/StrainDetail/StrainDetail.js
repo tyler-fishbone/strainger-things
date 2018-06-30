@@ -10,6 +10,7 @@ class StrainDetail extends Component {
 
   componentDidMount() {
     this.fetchSelectedStrain()
+    this.refs.straindetail.scrollIntoView({behavior:"smooth"})
   }
 
   componentDidUpdate(prevProps) {
@@ -28,7 +29,7 @@ class StrainDetail extends Component {
 
   render() {
     return(
-      <div className="strain-detail-container">
+      <div ref="straindetail" className="strain-detail-container">
         <div className="strain-detail">
           <div className="strain-image">
             <img src={this.state.selectedStrain.image_url} alt=""/>
