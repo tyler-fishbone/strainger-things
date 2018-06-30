@@ -9,17 +9,27 @@ class StrainDetail extends Component {
   }
 
   componentDidMount() {
+    this.fetchSelectedStrain()
+    this.refs.straindetail.scrollIntoView({behavior:"smooth"})
+  }
+
+  componentDidUpdate(prevProps) {
+    if (this.props.selectedStrainId !== prevProps.selectedStrainId) {
+      this.fetchSelectedStrain();
+    }
+  }
+
+
+
+  fetchSelectedStrain() {
     fetch(`http://localhost:3001/strainDetail/${this.props.selectedStrainId}`)
     .then(response => response.json())
     .then(response => this.setState({ selectedStrain: response.data }))
-    // .then(({ data }) => {
-    //   console.log(data)
-    // })
   }
 
   render() {
     return(
-      <div className="strain-detail-container">
+      <div ref="straindetail" className="strain-detail-container">
         <div className="strain-detail">
           <div className="strain-image">
             <img src={this.state.selectedStrain.image_url} alt=""/>
