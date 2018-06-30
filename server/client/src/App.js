@@ -17,18 +17,18 @@ class App extends Component {
     }
 
     this.setStateGifToAdd = this.setStateGifToAdd.bind(this)
-    this.updateTaggedGifs = this.updateTaggedGifs.bind(this)
+    // this.updateTaggedGifs = this.updateTaggedGifs.bind(this)
   }
 
-  componentDidMount() {
-    this.updateTaggedGifs()
-  }
+  // componentDidMount() {
+  //   this.updateTaggedGifs()
+  // }
 
-  updateTaggedGifs() {
-    fetch(`http://localhost:3001/taggedGifs/${this.state.selectedStrainId}`)
-    .then(response => response.json())
-    .then(response => this.setState({ taggedGifs: response.data }))
-  }
+  // updateTaggedGifs() {
+  //   fetch(`http://localhost:3001/taggedGifs/${this.state.selectedStrainId}`)
+  //   .then(response => response.json())
+  //   .then(response => this.setState({ taggedGifs: response.data }))
+  // }
 
   setStateGifToAdd(gifId) {
     this.setState({ gifToAdd: gifId })
@@ -48,7 +48,7 @@ class App extends Component {
             selectedStrainId={this.state.selectedStrainId}
             gifToAdd={this.state.gifToAdd}
             taggedGifs={this.state.taggedGifs}
-            updateTaggedGifs={this.updateTaggedGifs}
+            // updateTaggedGifs={this.updateTaggedGifs}
             />
             <GiphySearch 
             selectedStrainId={this.state.selectedStrainId}

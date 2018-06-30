@@ -104,14 +104,18 @@ h1, h2, h3, h4, h5, h6, p, a {
   display:inline-block;
   width: 200px;
   height: 254px;
-  border: 1px solid black;
   border-radius: 25px;
   margin: 50px;
   position: relative;
+  background-color: #3d7f65;
+}
+
+.strain-selector-tile p {
+  color: white;
 }
 
 .strain-selector-tile:hover {
-  background-color: rgba(0, 0, 255, 0.267);
+  background-color: #499979;
 }
 
 .tile-strain-type {
@@ -122,6 +126,7 @@ h1, h2, h3, h4, h5, h6, p, a {
 }
 
 .tile-strain-abbreviation {
+
   position: absolute;
   font-size: 4em;
   top: 45%;

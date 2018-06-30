@@ -9,14 +9,11 @@ class MainHeader extends Component {
             <h1>Giffy Jane</h1>
           </div>
           <nav className="header-nav">
-            <ul>
+            {/* <ul>
               <li>
                 <a href="/">Home</a>
               </li>
-              <li>
-                <a href="">Select a Strain</a>
-              </li>
-            </ul>
+            </ul> */}
           </nav>
         </header>
       </div>

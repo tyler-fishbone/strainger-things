@@ -34,6 +34,7 @@ class GiphySearchResults extends Component {
     .then(this.postGifToStrain)
     .then(console.log('updateTaggedGifs running'))
     .then(this.props.setStateGifToAdd(event.target.getAttribute('id')))
+    .then(console.log('just ran setStateGifToAdd'))
     // .then(this.props.setStateGifToAdd(this.state.selectedGifId))
     
     // this.postGifToStrain()
@@ -66,7 +67,7 @@ class GiphySearchResults extends Component {
     const listItems = children.map((child) =>
       <ul className="gif-tile-result" key={child.id}>
         <li><img src={child.images.downsized_large.url} alt={child.title} /></li>
-        <li><div id={child.id} onClick={this.handleClick} >Click to Select Gif</div></li>
+        <li><button id={child.id} onClick={this.handleClick} >Click to Select Gif</button></li>
         {/* <li><a key={child.id} onClick={event => this.setState({selectedGifId: event.target.key})}>Click to Select Gif</a></li> */}
       </ul>
     )

@@ -22,7 +22,7 @@ gif(
   search_tag TEXT,
 )
 
-CREATE TABLE IF NOT EXISTS gif( gif_id SERIAL PRIMARY KEY, strain_id INTEGER NOT NULL REFERENCES strain(strain_id), giphy_id VARCHAR(100) UNIQUE NOT NULL, downsized_large_url TEXT, search_tag TEXT);
+CREATE TABLE IF NOT EXISTS gif( gif_id SERIAL PRIMARY KEY, strain_id INTEGER NOT NULL REFERENCES strain(strain_id), giphy_id VARCHAR(100) NOT NULL, downsized_large_url TEXT, search_tag TEXT);
 
 
 
